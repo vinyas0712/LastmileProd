@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consent Page</title>
+  <script defer src='https://portalstage.catchpoint.com/jp/106154/v4.0.11/lastMileScript.js'></script>
+
+   <script>
+    // Initialize the queue
+    window.CPRUMDataLayer = window.CPRUMDataLayer || [];
+    function cpRumTag() {
+      CPRUMDataLayer.push(arguments);
+    }
+
+    // Queue some events before the "real library" is loaded
+    
+    cpRumTag('consentv2', { analytics_storage: 'denied' })
+  </script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h1 {
+      color: #333;
+    }
+    p {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.5;
+    }
+    .button-group {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-around;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .grant {
+      background-color: #28a745;
+      color: #fff;
+    }
+    .deny {
+      background-color: #dc3545;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Consent Form</h1>
+    <p>
+      Please read the following information carefully before proceeding. You can either grant or deny consent.
+    </p>
+    <div class="button-group">
+      <button class="grant" onclick="grantConsent()">Grant</button>
+      <button class="deny" onclick="denyConsent()">Deny</button>
+    </div>
+  </div>
+
+  <script>
+    function grantConsent() {
+      // Redirect to next page
+      window.location.href = "page6.html"; // Change to your next page
+    }
+
+    function denyConsent() {
+      // Close the tab or window
+      window.close();
+      // If window.close() doesn't work (browser restrictions), show alert
+      alert("Consent denied. The page will remain as is.");
+    }
+  </script>
+  <script type="application/javascript" src="main.js"></script>
+</body>
+</html>
